@@ -31,6 +31,12 @@ defmodule HelpixWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/", HelpixWeb do
+    pipe_through [:protected, :browser]
+
+    resources "/ticket", TicketController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", HelpixWeb do
   #   pipe_through :api
