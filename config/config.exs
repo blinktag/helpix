@@ -22,6 +22,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :helpix, :pow,
+  user: Helpix.Users.User,
+  repo: Helpix.Repo
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

@@ -42,5 +42,7 @@ defmodule HelpixWeb.Endpoint do
     key: "_helpix_key",
     signing_salt: "M1V4lhIL"
 
+  plug Pow.Plug.Session, otp_app: :helpix
+
   plug HelpixWeb.Router
 end
