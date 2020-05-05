@@ -3,7 +3,7 @@ defmodule Helpix.Repo.Migrations.CreateTicket do
 
   def change do
     create table(:ticket) do
-      add :user_id, :integer
+      add :user_id, references(:users)
       add :subject, :string
       add :body, :string
       add :status, :integer
@@ -12,6 +12,5 @@ defmodule Helpix.Repo.Migrations.CreateTicket do
 
       timestamps()
     end
-
   end
 end

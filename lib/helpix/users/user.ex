@@ -5,6 +5,8 @@ defmodule Helpix.Users.User do
   schema "users" do
     pow_user_fields()
 
+    has_many :tickets, Helpix.Ticket
+
     timestamps()
   end
 end
