@@ -1,11 +1,9 @@
-<h1>Listing Ticket</h1>
+<h1>My Tickets</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
       <th>Subject</th>
-      <th>Body</th>
       <th>Status</th>
       <th>Department</th>
       <th>Last replier</th>
@@ -16,21 +14,23 @@
   <tbody>
 <%= for ticket <- @ticket do %>
     <tr>
-      <td><%= ticket.user_id %></td>
       <td><%= ticket.subject %></td>
-      <td><%= ticket.body %></td>
       <td><%= ticket.status %></td>
       <td><%= ticket.department_id %></td>
       <td><%= ticket.last_replier %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.ticket_path(@conn, :show, ticket) %></span>
-        <span><%= link "Edit", to: Routes.ticket_path(@conn, :edit, ticket) %></span>
-        <span><%= link "Delete", to: Routes.ticket_path(@conn, :delete, ticket), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Show", to: Routes.ticket_path(@conn, :show, ticket), class: "btn btn-info btn-sm" %></span>
+        <span><%= link "Edit", to: Routes.ticket_path(@conn, :edit, ticket), class: "btn btn-warning btn-sm" %></span>
+        <span>
+          <%= link to: Routes.ticket_path(@conn, :delete, ticket), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-trash-o"></i>
+          <%= end %>
+        </span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Ticket", to: Routes.ticket_path(@conn, :new) %></span>
+<span><%= link "New Ticket", to: Routes.ticket_path(@conn, :new), class: "btn btn-success btn-sm" %></span>

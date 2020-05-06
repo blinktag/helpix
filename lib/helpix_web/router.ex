@@ -35,6 +35,7 @@ defmodule HelpixWeb.Router do
     pipe_through [:protected, :browser]
 
     resources "/ticket", TicketController
+    resources "/posts", PostController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.

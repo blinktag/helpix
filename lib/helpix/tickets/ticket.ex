@@ -10,6 +10,8 @@ defmodule Helpix.Tickets.Ticket do
     field :subject, :string
     field :user_id, :integer
 
+    has_many :posts, Helpix.Tickets.Post
+
     timestamps()
   end
 
