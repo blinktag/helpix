@@ -5,30 +5,14 @@
     </div>
   <% end %>
 
-  <%= label f, :user_id %>
-  <%= number_input f, :user_id %>
-  <%= error_tag f, :user_id %>
 
-  <%= label f, :subject %>
-  <%= text_input f, :subject %>
-  <%= error_tag f, :subject %>
+  <%= PBF.text_input f, :user_id %>
+  <%= PBF.text_input f, :subject %>
 
-  <%= label f, :body %>
-  <%= text_input f, :body %>
-  <%= error_tag f, :body %>
+  <%= PBF.text_input f, :body %>
 
-  <%= label f, :status %>
-  <%= number_input f, :status %>
-  <%= error_tag f, :status %>
-
-  <%= label f, :department_id %>
-  <%= number_input f, :department_id %>
-  <%= error_tag f, :department_id %>
-
-  <%= label f, :last_replier %>
-  <%= text_input f, :last_replier %>
-  <%= error_tag f, :last_replier %>
-
+  <%= PBF.text_input f, :status %>
+  <%= PBF.text_input f, :department_id %>
   <div>
     <%= submit "Save" %>
   </div>

@@ -33,12 +33,9 @@
                 <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
                     <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search tickets">
                 </form>
-              <%= end %>
+              <% end %>
                 <ul class="nav navbar-nav ml-auto">
-                    <%= if Pow.Plug.current_user(@conn) == false do %>
-                        <li class="nav-item"><a href="/registrations/login" class="nav-link">Login</a></li>
-                        <li class="nav-item"><a href="/registrations/new" class="nav-link">Register</a></li>
-                    <% else %>
+                    <%= if Pow.Plug.current_user(@conn) do %>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
@@ -51,7 +48,10 @@
                                 <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
                             </div>
                         </li>
-                    <%= end %>
+                    <% else %>
+                      <li class="nav-item"><a href="/session/new" class="nav-link">Login</a></li>
+                      <li class="nav-item"><a href="/registrations/new" class="nav-link">Register</a></li>
+                    <% end %>
                 </ul>
             </div>
         </div>
@@ -64,10 +64,10 @@
                 <br />
                 <%= if get_flash(@conn, :info) do %>
                 <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-                <%= end %>
+                <% end %>
                 <%= if get_flash(@conn, :error) do %>
                 <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-                <%= end %>
+                <% end %>
                 <%= render @view_module, @view_template, assigns %>
             </div>
         </div>

@@ -42,6 +42,7 @@ defmodule HelpixWeb do
       import HelpixWeb.ErrorHelpers
       import HelpixWeb.Gettext
       alias HelpixWeb.Router.Helpers, as: Routes
+      alias PhoenixBootstrapForm, as: PBF
     end
   end
 
