@@ -19,6 +19,16 @@ defmodule HelpixWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
+  pipeline :admin do
+    plug Helpix.EnsureRolePlug, :admin
+  end
+
+  scope "admin", HelpixWeb do
+    pipe_through [:browser, :admin]
+
+    # ...
+  end
+
   scope "/" do
     pipe_through :browser
 
