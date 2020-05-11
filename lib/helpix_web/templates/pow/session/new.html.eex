@@ -7,13 +7,13 @@
     </div>
   <% end %>
 
-  <%= PBF.label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= PBF.text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= PFG.error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
 
-  <%= PBF.label f, :password %>
-  <%= PBF.password_input f, :password %>
-  <%= PBF.error_tag f, :password %>
+  <%= label f, :password %>
+  <%= password_input f, :password %>
+  <%= error_tag f, :password %>
 
   <div>
     <%= submit "Sign in" %>

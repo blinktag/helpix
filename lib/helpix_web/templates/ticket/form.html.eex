@@ -6,13 +6,13 @@
   <% end %>
 
 
-  <%= PBF.text_input f, :user_id %>
-  <%= PBF.text_input f, :subject %>
+  <%= text_input f, :user_id %>
+  <%= text_input f, :subject %>
 
-  <%= PBF.text_input f, :body %>
+  <%= text_input f, :body %>
 
-  <%= PBF.text_input f, :status %>
-  <%= PBF.text_input f, :department_id %>
+  <%= text_input f, :status %>
+  <%= text_input f, :department_id %>
   <div>
     <%= submit "Save" %>
   </div>
